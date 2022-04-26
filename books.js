@@ -19,7 +19,6 @@ async function renderBooks(filter) {
     books.sort((a,b) => b.rating - a.rating)
   }
 
-
   const booksHTML = books.map((books) => {
    return `<div class="book">
   <figure class="book__img--wrapper">
@@ -39,6 +38,7 @@ async function renderBooks(filter) {
   .join("");
  booksWrapper.innerHTML = booksHTML
 }
+
 
 function filterBooks(event) {
   renderBooks(event.target.value)

@@ -1,15 +1,20 @@
-async function main() {
+let champion;
+let championValuesIntoArray = renderChampions();
+
+async function renderChampions() {
     const champions = await fetch("http://ddragon.leagueoflegends.com/cdn/12.7.1/data/en_US/champion.json")
     const championsData = await champions.json();
     const championValues = Object.values(championsData)
     const championValueData= championValues[3]
-    const championValuesIntoArray = Object.values(championValueData)
-    console.log(championValuesIntoArray)
+    championValuesIntoArray = Object.values(championValueData)
     const championsEl = document.querySelector(".champions")
     championsEl.innerHTML = championValuesIntoArray.map((champion) => championHTML(champion) ).join("")
+    return championValuesIntoArray
 }
+renderChampions()
 
-main()
+
+
 
 function championHTML (champion){
     return `
@@ -23,5 +28,4 @@ function championHTML (champion){
 
 function dropdown() {
     document.getElementById("search__dropdown-list").classList.toggle("show");
-  }
-
+}
