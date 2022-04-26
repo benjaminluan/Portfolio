@@ -130,6 +130,7 @@ Champions
 .champions__filter {
     display:flex;
     justify-content: space-between;
+    margin: 64px 0;
 }
 
 .champions{
@@ -160,4 +161,12 @@ Champions
 
 
 
-
+
+
+
+
+@media (max-width: 768px) {
+    .champion{
+        width: 50%;
+    }
+}
