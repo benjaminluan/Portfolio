@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lato:ital,wght@0,400;1,700&family=Roboto:wght@400;700&family=Rubik+Wet+Paint&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: roboto ,sans-serif;
+}
+
+body{
+    background-image: url(./assets/217097.png);
+    background-repeat: no-repeat;
+}
+a{
+    list-style: none;
+    color: white;
+    text-decoration: none;
+}
+/* 
+NAV BAR
+*/
+
+
+.nav{
+    height: 10%;
+    margin: 0, 48px;
+}
+
+.nav__search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 60px 0;
+}
+.nav__container{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin:0 auto;
+    align-items: center;
+    padding: 0 24px;
+    height: 100%;
+}
+
+.nav__links{
+    display: flex;
+}
+
+.nav__link{
+    margin: 0 8px;
+    font-size: 18px;
+}
+
+.logo{
+    height: 100%;
+    width: 240px;
+}
+
+.leagueImg{
+    height: 100%;
+    width: 100%;
+}
+
+/* 
+
+Favorites
+
+*/
+
+#favorites{
+    min-height: 100vh;
+}
+.container{
+    padding: 56px 0;
+    min-height: 100vh;
+}
+
+.row{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.favorite__champions{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.personal__favorite{
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.favorite__champion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    padding: 24px;
+}
+
+.champion__img--wrapper{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 200px black;
+    margin-bottom: 24px;
+}
+.champion__img{
+    
+}
+.explore__btn--wrapper{
+    width: 100%;
+    text-align: center;
+}
+.explore__btn{
+    text-align: center;
+}
+
+/*
+
+Champions
+
+*/
+
+.champions__filter {
+    display:flex;
+    justify-content: space-between;
+}
+
+.champions{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.champion{
+    width: calc(100% / 6);
+    padding: 24px;
+}
+
+.champion__name{
+    text-align: center;
+}
+
+.champion--wrapper{
+    width: 100%;
+}
+
+.champion__pic{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
