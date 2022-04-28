@@ -7,8 +7,12 @@
     font-family: roboto ,sans-serif;
 }
 
-body{
-    background-repeat: no-repeat;
+html{
+    scroll-behavior: smooth;
+}
+
+.cursor{
+    cursor: pointer;
 }
 a{
     list-style: none;
@@ -23,6 +27,7 @@ NAV BAR
 .nav{
     height: 10%;
     margin: 0, 48px;
+    background-color: black;
 }
 
 .nav__search{
@@ -60,6 +65,27 @@ NAV BAR
 .leagueImg{
     height: 100%;
     width: 100%;
+}
+
+.main__background{
+    background-image: url(./assets/Renata_0.jpg);
+    background-size: 100%;
+    min-height: 600px;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.view__champion--btn{
+    position: absolute;
+    top:70%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 24px 24px;
+    font-size: 32px;
+    font-weight: 700;
 }
 
 /* 
