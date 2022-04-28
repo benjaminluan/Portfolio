@@ -10,22 +10,16 @@ async function renderChampions(filter) {
     const championsEl = document.querySelector(".champions")
     championsEl.innerHTML = championValuesIntoArray.map((champion) => championHTML(champion) ).join("")
 
+    // console.log(championValuesIntoArray[0].info.difficulty)
+    console.log(championValuesIntoArray)
 
     if (filter === 'All'){
         championsEl.innerHTML = championValuesIntoArray.map((champion) => championHTML(champion) ).join("")
-    } else if (filter === "Assassin"){
-        championsEl.innerHTML = championValuesIntoArray.filter((champion) => (champion.tags.includes("Assassin"))).map(champion =>championHTML(champion) ).join("")
-    } else if (filter === "Fighter"){
-        championsEl.innerHTML = championValuesIntoArray.filter((champion) => (champion.tags.includes("Fighter"))).map(champion =>championHTML(champion) ).join("")
-    } else if (filter === "Mage"){
-        championsEl.innerHTML = championValuesIntoArray.filter((champion) => (champion.tags.includes("Mage"))).map(champion =>championHTML(champion) ).join("")
-    } else if (filter === "Marksman"){
-        championsEl.innerHTML = championValuesIntoArray.filter((champion) => (champion.tags.includes("Marksman"))).map(champion =>championHTML(champion) ).join("")
-    } else if (filter === "Tank"){
-        championsEl.innerHTML = championValuesIntoArray.filter((champion) => (champion.tags.includes("Tank"))).map(champion =>championHTML(champion) ).join("")
-    } else if (filter === "Support"){
-        championsEl.innerHTML = championValuesIntoArray.filter((champion) => (champion.tags.includes("Support"))).map(champion =>championHTML(champion) ).join("")
-    }
+    } else if (filter === `${filter}`){
+        championsEl.innerHTML = championValuesIntoArray.filter((champion) => (champion.tags.includes(`${filter}`))).map(champion =>championHTML(champion) ).join("")
+    }     
+
+    const test = FilterDifficultyFunction()
 }
 
 renderChampions()
@@ -45,7 +39,11 @@ function championFilter(event){
     renderChampions(event.target.textContent)
 }
 
+function FilterDifficultyFunction(){
+
+}
+
 function filterDifficulty(event){
-    console.log(event)
+    renderChampions(event.target.value)
 }
 
