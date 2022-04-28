@@ -19,6 +19,7 @@ a{
     color: white;
     text-decoration: none;
 }
+
 /* 
 NAV BAR
 */
@@ -88,6 +89,44 @@ NAV BAR
     font-weight: 700;
 }
 
+.champion__info--container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+.champion__splash-art{
+    margin:0 auto;
+}
+
+.champion__splash-art--container{
+    -webkit-mask-image: linear-gradient(rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0) 98%);
+    width: 1200px;
+}
+
+.champion__info--img{
+    box-shadow: 25px 25px 15px rgb(0 0 0 / 0.2);
+    width: 100%;
+}
+
+
+.champion__info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.champion__info--title{
+    margin-bottom: 24px;
+    font-size: 48px;
+}
+
+.champion__info--name{
+    margin-bottom: 36px;
+    font-size: 80px;
+    
+}
 /* 
 
 Favorites
@@ -151,11 +190,15 @@ Favorites
 Champions
 
 */
-
+#champions{
+    background-color: rgb(248, 248, 248);
+}
 .champions__filter {
     display:flex;
     justify-content: space-between;
+    align-items: center;
     margin: 64px 0;
+    border: 2px solid #e9d58e;
 }
 
 .champions{

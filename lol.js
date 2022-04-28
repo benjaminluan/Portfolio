@@ -12,37 +12,18 @@ async function renderChampions(filter) {
     const championValueData= championValues[3]
     championValuesIntoArray = Object.values(championValueData)
     const championsEl = document.querySelector(".champions")
-    championsEl.innerHTML = championValuesIntoArray.map((champion) => championHTML(champion) ).join("")
     
-
-
-    // championsEl.innerHTML = championValuesIntoArray.filter((champion) => (champion.info.difficulty <= TwoTypeFilter[1])).map(champion => championHTML(champion) ).join("")
-
-
     if (TwoTypeFilter[0] === 'All'){
-        championsEl.innerHTML = championValuesIntoArray.map((champion) => championHTML(champion) ).join("")
+        championsEl.innerHTML = championValuesIntoArray.filter((champion) => (champion.info.difficulty <= TwoTypeFilter[1] && champion.info.difficulty > difficultyValueMin)).map((champion) => championHTML(champion) ).join("")
     }else {
         championTypeFiltered = championValuesIntoArray.filter((champion) => (champion.tags.includes(`${TwoTypeFilter[0]}`) && (champion.info.difficulty <= TwoTypeFilter[1] && champion.info.difficulty > difficultyValueMin)))
         championsEl.innerHTML = championTypeFiltered.map(champion => championHTML(champion) ).join("") 
     }
-
-    // } else if (filter === `${filter}`){
-        // championTypeFiltered = championValuesIntoArray.filter((champion) => (champion.tags.includes(`${TwoTypeFilter[0]}`)))
-    // }
-
-    // if (difficultyValue === 3){
-        // championDifficultyFiltered = championValuesIntoArray.filter((champion) => (champion.info.difficulty <= TwoTypeFilter[1]))
-    // } else if (difficultyValue === 7){
-        // championDifficultyFiltered = championValuesIntoArray.filter((champion) => (champion.info.difficulty == TwoTypeFilter[1]))
-    // } else if (difficultyValue === 10){
-        // championDifficultyFiltered = championValuesIntoArray.filter((champion) => (champion.info.difficulty == TwoTypeFilter[1]))
-    // }
-
-    // let championCombinedFilter = championDifficultyFiltered.concat(championTypeFiltered)
-
-    // championsEl.innerHTML = championCombinedFilter.map(champion => championHTML(champion) ).join("")
-    // championTypeFiltered.map(champion => championHTML(champion) ).join("")    
+    console.log(championValuesIntoArray)
 }
+
+
+renderChampions()
 
 function championFilter(event){
     renderChampions(event.target.textContent)
@@ -65,10 +46,6 @@ function filterDifficulty(event){
     TwoTypeFilter[1] = difficultyValue
     renderChampions()
 }
-
-renderChampions()
-
-
 
 function championHTML (champion){
     return `
