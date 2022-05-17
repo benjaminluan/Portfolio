@@ -24,7 +24,7 @@ async function renderChampions(filter) {
     console.log(championValuesIntoArray)
 
     championsInfoEl.innerHTML = championValuesIntoArray.map(test => championInfoHTML(test) ).join("")
-    console.log(championsInfoEl.innerHTML)
+   
 }
 
 
